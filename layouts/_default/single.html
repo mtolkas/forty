@@ -18,7 +18,7 @@
                             <header class="major">
                                 <h1>{{ .Title}}</h1>
                             </header>
-                            {{ if .Params.image }}
+                            {{ if and (.Params.image) (not .Params.do_not_show_featured_image) }}
                                 <span class="image main"><img src="{{ .Site.Params.baseURL }}/img/{{ .Section }}/{{ .Params.image }}" alt="" /></span>
                             {{ end }}
                             {{ .Content }}

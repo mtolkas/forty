@@ -1,5 +1,29 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
+@import url("https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css");
+
+
+/* MY CUSTOM CSS */
+
+/* .nGY2 .nGY2GThumbnailLabel {
+	background: rgba(34,34,34,.25) !important;
+}
+
+.nGY2GThumbnailTitle {
+	font-size: 0.8em;
+} */
+
+
+
+/* END CUSTOM CSS */
+
+
+
+
+
+
+
+
 
 /* Reset */
 
@@ -1636,7 +1660,7 @@
 	body, input, select, textarea {
 		color: #ffffff;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 17pt;
+		/* font-size: 17pt; */
 		font-weight: 300;
 		letter-spacing: 0.025em;
 		line-height: 1.65;
@@ -2972,7 +2996,7 @@
 				border-radius: 0;
 				display: block;
 				position: relative;
-				width: 30%;
+				width: 25%;
 			}
 
 				.spotlights > section > .image img {
@@ -3020,7 +3044,9 @@
 					width: 65em;
 				}
 
-			.spotlights > section:nth-child(2n) {
+
+/* Changed from 2n to 4n */
+			.spotlights > section:nth-child(3n) {
 				-moz-flex-direction: row-reverse;
 				-webkit-flex-direction: row-reverse;
 				-ms-flex-direction: row-reverse;
@@ -3038,11 +3064,11 @@
 		@media screen and (max-width: 1680px) {
 
 			.spotlights > section > .image {
-				width: 40%;
+				width: 30%;
 			}
 
 			.spotlights > section > .content {
-				width: 60%;
+				width: 70%;
 			}
 
 		}
@@ -3050,11 +3076,11 @@
 		@media screen and (max-width: 1280px) {
 
 			.spotlights > section > .image {
-				width: 45%;
+				width: 35%;
 			}
 
 			.spotlights > section > .content {
-				width: 55%;
+				width: 65%;
 			}
 
 		}
@@ -3417,7 +3443,8 @@
 		background-size: cover;
 		border-bottom: 0 !important;
 		cursor: default;
-		height: 60vh;
+		/* height: 60vh; */
+		height: 35vh;
 		margin-bottom: -3.25em;
 		max-height: 32em;
 		min-height: 22em;
