@@ -36,19 +36,31 @@
 
                 <!-- Iterate in all pages-->
                 {{ range .Site.RegularPages.GroupByParam "continent" }}
-                    {{ range .Pages}}
+                    {{  range  $index, $element :=  .Pages}}
                         <!-- If the current_category is included in the categories list of each page -->
                         {{ if in .Params.categories ($.Scratch.Get "current_category")}}                        
 
                             <!-- This is to show separators for each continent, only on the first occurence and only when continent is set. In Blogs it is not. -->
                             
-                            {{ if and (isset .Params "continent") (ne .Params.continent ($.Scratch.Get "current_continent") )}}
+                            {{ if and  (isset .Params "continent") 
+                                    (ne .Params.continent ($.Scratch.Get "current_continent") ) 
+                                    (ne .Params.continent "NA" ) 
+                                }}
                                 <div id="main">
                                     {{ partial "place_separator.html" . }}
                                 </div>
 
-                                {{ $.Scratch.Set "current_continent" .Params.continent }}                            
+                                {{ $.Scratch.Set "current_continent" .Params.continent }}       
+                            {{ end }}    
+                            
+                            <!-- doing modulo to account for the css nth child that works with the post that have a continent-->
+                            {{  if and (eq .Params.continent "NA" ) (mod $index 2) }}
+                                <div id="" >                                    
+                                    
+                                </div>
+
                             {{ end }}
+                            
 
                             <!-- The content -->
                             <section>
@@ -58,7 +70,8 @@
                                 </a>
                                 <div class="content">
                                     <div class="inner">
-                                        <header class="major">
+                                        <!-- <header class="major"> -->
+                                        <header class="">
                                             <a href="{{ .Permalink }}" ><h3>{{ .Title }}</h3></a></li>
                                             
                                         </header>

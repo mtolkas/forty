@@ -3046,7 +3046,7 @@
 
 
 /* Changed from 2n to 4n */
-			.spotlights > section:nth-child(3n) {
+			.spotlights > section:nth-child(2n) {
 				-moz-flex-direction: row-reverse;
 				-webkit-flex-direction: row-reverse;
 				-ms-flex-direction: row-reverse;
@@ -3443,7 +3443,7 @@
 		background-size: cover;
 		border-bottom: 0 !important;
 		cursor: default;
-		/* height: 60vh; */
+		height: 60vh;
 		height: 35vh;
 		margin-bottom: -3.25em;
 		max-height: 32em;

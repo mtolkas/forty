@@ -1,7 +1,29 @@
 {{ "<!-- Contact -->" | safeHTML}}
     <section id="contact">
+
+        
         <div class="inner">
             <section>
+                <h2>Photo newsletter</h2>
+                <p>
+                    Sign up and get one of my photos every week on your mailbox.
+                </p>
+                <form action="https://buttondown.email/api/emails/embed-subscribe/mtolkas" method="post" target="popupwindow"
+                    onsubmit="window.open('https://buttondown.email/mtolkas', 'popupwindow')" class="embeddable-buttondown-form">
+                    <div class="field  first">
+
+
+                        <label for="bd-email">Your email</label>
+                        <input type="email" name="email" id="bd-email" placeholder="Enter Your Email"  required/>
+                    </div>
+                    <div class="actions">
+
+                        <input class="special" type="submit" value="Subscribe" />
+                    </div>
+
+                </form>
+            </section>
+            <!-- <section>
                 <form method="post" action="https://formspree.io/{{ .Site.Params.Contact.formEmail }}">
                     <div class="field half first">
                         <label for="name">Name</label>
@@ -20,16 +42,48 @@
                         <li><input type="reset" value="{{ .Site.Params.Contact.buttonClear }}" /></li>
                     </ul>
                 </form>
-            </section>
+            </section> -->
             <section class="split">
                 <section>
-                    <div class="contact-method">
+                    <h2>Contact</h2>
+
+                            <!-- <form action="https://api.staticforms.xyz/submit" method="post" id="staticform">                              
+                              <input type="hidden" name="accessKey" value="6eb81204-5095-4478-a597-0848fc98d408">
+                              <input type="hidden" name="subject" value="mtolkas.com contact form">
+                              <input type="text" name="honeypot" style="display: none;"> 
+                              <input type="hidden" name="redirectTo" value="https://www.google.com">
+                              <div class="field">
+                                <label class="label">Email</label>
+                                <div class="control">
+                                  <input class="input" type="email" name="email" placeholder="Enter Your Email" required>
+                                </div>
+                              </div>
+                              <div class="field">
+                                <label class="label">Message</label>
+                                <div class="control">
+                                  <textarea class="textarea" name="message" placeholder="Enter Your Message" required></textarea>
+                                </div>
+                              </div>
+                              <button class="button is-primary" type="Submit">Submit</button>
+                            </form>
+                 -->
+                      
+
+
+                            <div class="contact-method">
+                                <span class="icon alt fa-envelope"></span>
+                                {{ range .Site.Params.Contact.email }}
+                                <!-- <h3>{{ .title }}</h3> -->
+                                {{ .email }}
+                                {{ end }}
+                            </div>
+                    <!-- <div class="contact-method">
                         <span class="icon alt fa-envelope"></span>
                         {{ range .Site.Params.Contact.email }}
                         <h3>{{ .title }}</h3>
                         <a href="mailto:{{ .email }}">{{ .email }}</a>
                         {{ end }}
-                    </div>
+                    </div> -->
                 </section>
                 {{/*  <section>
                     <div class="contact-method">
