@@ -3171,7 +3171,7 @@
 		font-weight: 600;
 		height: 3.25em;
 		left: 0;
-		letter-spacing: 0.25em;
+		letter-spacing: 0.20em;
 		line-height: 3.25em;
 		margin: 0;
 		position: fixed;
@@ -3398,10 +3398,16 @@
 
 		}
 
-		@media screen and (max-width: 480px) {
+		@media screen and (max-width: 280px) {
 
 			#header .logo span {
 				display: none;
+			}
+		}
+		@media screen and (max-width: 480px) {
+
+			#header .logo span {
+				/* display: none; */
 			}
 
 			#header nav a[href="#menu"] {
